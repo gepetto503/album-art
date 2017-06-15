@@ -1,0 +1,24 @@
+.container {
+  border: 1px solid blue;
+  @include grid-container;
+}
+
+.row {
+  border: 1px solid red;
+  @include grid-column(12);
+}
+
+.column {
+  @include size(100px); // remember that width will be cancelled out by the calculated width of the column
+  border: 1px solid green;
+  margin: 5px auto;
+  @include grid-column (12);
+
+  @include tablet {
+    @include grid-column(3);
+  }
+
+  @include desktop {
+    @include grid-column(4);
+  }
+}
